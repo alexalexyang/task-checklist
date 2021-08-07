@@ -9,10 +9,10 @@ import Seo from "../components/seo";
 import fetch from "isomorphic-unfetch";
 import { useState } from "react";
 
-const description = "Try me out";
+const description =
+  "Using this domain to try methods to by-pass CSRF and CORS.";
 
 export default function TryMe() {
-  const [catUrl, setCatUrl] = useState<string | undefined>();
   const [cookies, setCookies] = useState();
 
   const getCookies = async () => {
@@ -24,19 +24,17 @@ export default function TryMe() {
     setCookies(res.cookies);
   };
 
-  const getCat = async () => {
-    const { catUrl } = await (await fetch("/api/csrf/get-image")).json();
-    setCatUrl(catUrl);
-  };
-
   return (
     <Main>
       <Seo description={description} />
       <Content>
         <Header>
-          <h1>Try me</h1>
+          <h1>Test domain</h1>
           <p>{description}</p>
         </Header>
+
+        <h2>GET and POST data to server</h2>
+
         <ButtonsWrapper>
           <RoundButton onClick={getCookies}>
             Get cookies from server
@@ -48,14 +46,18 @@ export default function TryMe() {
           >
             {cookies ? "Clear cookies from state" : "Check cookies from server"}
           </RoundButton>
-          <RoundButton onClick={getCat}>Get cat</RoundButton>
         </ButtonsWrapper>
+
         {cookies && (
           <div>
             <pre>{JSON.stringify(cookies, null, 2)}</pre>
           </div>
         )}
-        {catUrl && <StyledImage src={catUrl} alt="random cat" />}
+
+        <h2>Image direct from URL</h2>
+
+        <p>Directly loaded into an img tag.</p>
+        <StyledImage src={`/api/csrf/get-image`} alt="random cat" />
       </Content>
     </Main>
   );

@@ -1,18 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import fetch from "isomorphic-unfetch";
+import fs from "fs";
+import path from "path";
 
-type Data = {
-  catUrl: string;
-};
+const filePath = path.resolve(".", "public/cat.jpg");
+const imageBuffer = fs.readFileSync(filePath);
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
-  const randomCat = await (
-    await fetch("https://api.thecatapi.com/v1/images/search")
-  ).json();
+  console.log(req.headers);
 
-  res.status(200).json({ catUrl: randomCat[0].url });
+  res.setHeader("Content-Type", "image/jpg");
+  res.send(imageBuffer);
 }
