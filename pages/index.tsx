@@ -1,11 +1,7 @@
+import { Content, Footer, Header, ImageWrapper, Main } from "../styles/layout";
 import {
-  Content,
   CriteriaCell,
-  Footer,
-  Header,
-  ImageWrapper,
   Input,
-  Main,
   Table,
   TaskCell,
   TaskCellText,
@@ -16,12 +12,11 @@ import {
   Tooltip,
   Tr,
   TrSubHeading,
-} from "../components/styles";
+} from "../styles/table-styles";
 import { Dispatch, SetStateAction, useState } from "react";
 
 import Image from "next/image";
 import Seo from "../components/seo";
-// import Head from "next/head";
 import octocat from "./octocat.jpg";
 import questions from "./questions.json";
 
@@ -80,11 +75,6 @@ export default function Home() {
 
   return (
     <Main>
-      {/* <Head>
-        <title>Task Checklist</title>
-        <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head> */}
       <Seo description={description} />
       <Content>
         <Header>
