@@ -26,3 +26,11 @@ export const StyledImage = styled.img`
   border-radius: 2rem;
   object-fit: contain;
 `;
+
+export const TextWrapper = styled.div`
+  line-height: 1.5rem;
+
+  > :not(:last-child) {
+    margin-bottom: 1rem;
+  }
+`;

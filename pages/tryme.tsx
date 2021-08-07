@@ -2,6 +2,7 @@ import {
   ButtonsWrapper,
   RoundButton,
   StyledImage,
+  TextWrapper,
 } from "../styles/misc-styles";
 import { Content, Header, Main } from "../styles/layout";
 
@@ -30,29 +31,32 @@ export default function TryMe() {
       <Content>
         <Header>
           <h1>Test domain</h1>
-          <p>{description}</p>
-          <p>
-            I made this after this article piqued my curiosity and did more
-            research:{" "}
-            <a href="https://blog.azuki.vip/csrf/" target="__blank">
-              how to be popular
-            </a>
-            .
-          </p>
 
-          <p>
-            Get cookies with the button below, take note of the image, then go
-            to
-            <a href="https://security-testing.vercel.app/" target="__blank">
-              this page
-            </a>
-            to try the exploits.
-          </p>
+          <TextWrapper>
+            <p>{description}</p>
 
-          <p>
-            Feel free to download both repos to try locally and get insight from
-            the server.
-          </p>
+            <p>
+              I made this after reading{" "}
+              <a href="https://blog.azuki.vip/csrf/" target="__blank">
+                &quot;how to be popular&quot;
+              </a>{" "}
+              and doing a bit more research.
+            </p>
+
+            <p>
+              Get cookies with the button below, take note of the image, then go
+              to{" "}
+              <a href="https://security-testing.vercel.app/" target="__blank">
+                this page
+              </a>{" "}
+              to try the exploits.
+            </p>
+
+            <p>
+              Feel free to download both repos to try locally and get insight
+              from the server.
+            </p>
+          </TextWrapper>
         </Header>
 
         <h2>GET and POST data to server</h2>
