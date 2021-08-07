@@ -31,6 +31,14 @@ export default function TryMe() {
         <Header>
           <h1>Test domain</h1>
           <p>{description}</p>
+          <p>
+            I made this after this article piqued my curiosity and I did more
+            research:{" "}
+            <a href="https://blog.azuki.vip/csrf/" target="__blank">
+              how to be popular
+            </a>
+            .
+          </p>
         </Header>
 
         <h2>GET and POST data to server</h2>
