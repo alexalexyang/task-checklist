@@ -32,12 +32,26 @@ export default function TryMe() {
           <h1>Test domain</h1>
           <p>{description}</p>
           <p>
-            I made this after this article piqued my curiosity and I did more
+            I made this after this article piqued my curiosity and did more
             research:{" "}
             <a href="https://blog.azuki.vip/csrf/" target="__blank">
               how to be popular
             </a>
             .
+          </p>
+
+          <p>
+            Get cookies with the button below, take note of the image, then go
+            to
+            <a href="https://security-testing.vercel.app/" target="__blank">
+              this page
+            </a>
+            to try the exploits.
+          </p>
+
+          <p>
+            Feel free to download both repos to try locally and get insight from
+            the server.
           </p>
         </Header>
 
